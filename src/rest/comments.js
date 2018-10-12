@@ -47,7 +47,6 @@ const whereRequest = (query) => {
  * @return {Object<{ data: relational.comments[] }>}
  *
  * @example GET /api/comments
- 
  */
 router.get('/', async (req, res, next) => {
   try {
@@ -92,7 +91,7 @@ router.get('/pagination', (req, res, next) => {
  * @name create - create a item
  * @return {Object<{ message: string }>}
  *
- * @example POST /api/comments { text: ${text} }
+ * @example POST /api/comments
  */
 router.post('/', authHelpers.loginRequired, async (req, res, next) => {
   try {

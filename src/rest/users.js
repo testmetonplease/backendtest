@@ -8,30 +8,12 @@ const router = Router();
 
 /**
  * @name users - get a users
- * @param {string} [text] - search for text in users
  * @return {Object<{ data: relational.users[] }>}
- *
  * @example GET /api/users
- * @example GET /api/users?text=${text}
  */
 router.get('/', async (req, res, next) => {
   try {
-    // TODO: get a item with ID
-    const {
-      body,
-    } = req.query;
-
-    const find = {};
-
-    if (body) {
-      // find.where = {
-      //   body: {
-      //     [Op.like]: `%${body}%`,
-      //   },
-      // };
-    }
-
-    const data = await relational.User.findAll(find);
+    const data = await relational.User.findAll();
     res.json({
       data,
     });
@@ -56,7 +38,7 @@ router.get('/count', async (req, res, next) => {
  */
 router.get('/pagination', (req, res, next) => {
   try {
-    // TODO: pagination
+    //  pagination
   } catch (err) {
     next(err);
   }

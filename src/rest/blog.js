@@ -45,8 +45,7 @@ const whereRequest = (query) => {
  * @return {Object<{ data: relational.Blog[] }>}
  *
  * @example GET /api/blog
- * @example GET /api/blog?where=${body}
- */
+  */
 router.get('/', async (req, res, next) => {
   try {
     const data = await relational.Blog.findAll(whereRequest(req.query))
